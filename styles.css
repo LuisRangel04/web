@@ -1,0 +1,379 @@
+/* ===============================
+   PALETA DE COLORES (SEGÚN TU IMAGEN)
+   Ajusta si es necesario
+================================ */
+:root {
+  --color-primario: #5b8d69;
+  --color-secundario: #5297A5;
+  --color-fondo: #F2F2F2;
+  --color-oscuro: #2F2F2F;
+  --color-claro: #ffffff;
+}
+
+/* ===============================
+   RESETEO GENERAL
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gilroy', sans-serif;
+}
+
+body {
+  background: var(--color-fondo);
+  color: var(--color-oscuro);
+  min-height: 100vh;
+}
+
+/* ===============================
+   HEADER + MENÚ HAMBURGUESA
+================================ */
+.header {
+  width: 100%;
+  background: var(--color-primario);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  color: var(--color-claro);
+}
+
+.logo img {
+  width: 120px;
+}
+
+/* Menú hamburguesa */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: var(--color-claro);
+  transition: 0.3s ease;
+  border-radius: 2px;
+}
+
+/* MENÚ DESPLEGABLE */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  background: var(--color-primario);
+  position: absolute;
+  top: 60px;
+  right: 15px;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease;
+}
+
+.nav-links a {
+  color: var(--color-claro);
+  text-decoration: none;
+  padding: 10px 0;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Activa el menú */
+.nav-links.active {
+  display: flex;
+}
+
+/* ANIMACIÓN MENÚ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===============================
+   MAIN CONTENT
+================================ */
+.main {
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: var(--color-primario);
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+/* ===============================
+   TARJETAS DE PRODUCTOS
+================================ */
+.product-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.product-card {
+  background: var(--color-claro);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  animation: fadeIn 0.4s ease;
+}
+
+.product-img {
+  width: 100%;
+  height: 150px;
+  background: var(--color-secundario);
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  background: var(--color-primario);
+  color: var(--color-claro);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* ===============================
+   MENSAJES
+================================ */
+.messages-container {
+  margin-top: 20px;
+}
+
+.message-card {
+  background: var(--color-claro);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  animation: fadeIn 0.4s ease;
+}
+
+.message-user-img {
+  width: 50px;
+  height: 50px;
+  background: var(--color-secundario);
+  border-radius: 50%;
+}
+
+/* ===============================
+   MAPA
+================================ */
+.map-container {
+  margin-top: 20px;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 250px;
+  background: var(--color-secundario);
+  color: var(--color-claro);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  font-size: 20px;
+}
+
+/* ===============================
+   PERFIL
+================================ */
+.profile-card {
+  background: var(--color-claro);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  background: var(--color-secundario);
+  border-radius: 50%;
+  margin: 0 auto 15px;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--color-primario);
+  color: var(--color-claro);
+  margin-top: 30px;
+}
+
+.product-img {
+    width: 120px;              /* Ajusta el tamaño como gustes */
+    height: 120px;
+    object-fit: cover;         /* Recorta y mantiene proporción */
+    border-radius: 10px;
+    flex-shrink: 0;            /* Evita que la imagen se estire */
+}
+
+.product-card {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+}
+
+/* Imagen del producto (horizontal/rectangular) */
+.product-img {
+    width: 100%;
+    height: 220px;          /* ajusta si deseas */
+    object-fit: cover;      /* mantiene forma y recorta sin deformar */
+    display: block;
+}
+
+/* Contenido de texto */
+.product-info {
+    padding: 15px;
+}
+
+.product-info h2 {
+    margin: 0;
+    color: #5b8d69;         /* Verde suave de tu paleta */
+    font-weight: bold;
+}
+
+.product-info p {
+    margin-top: 8px;
+    color: #303330;         /* gris oscuro de tu paleta */
+}
+
+/* Botón */
+.btn-contact {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    background: #5b8d69;   /* verde principal */
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+.filter-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.filter-btn {
+    background-color: #96BF8F; /* Verde suave */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    letter-spacing: 0.5px;
+}
+
+/* Hover */
+.filter-btn:hover {
+    background-color: #5b8d69; /* Verde más profundo */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.20);
+}
+
+/* Estado activo (cuando un filtro está seleccionado) */
+.filter-btn.active {
+    background-color: #5297A5; /* Azul de la paleta */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    transform: translateY(0);
+}
+.message-user-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden; /* Recorta todo lo que se salga */
+    border: 3px solid #96BF8F; /* Verde suave (opcional) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #CBCBCB; /* gris claro si no hay foto */
+}
+
+.message-user-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    /* cover asegura que la imagen se recorte y nunca se deforme */
+}
+.map-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden; /* Recorta lo que se salga */
+    background-color: #e5e5e5; /* por si la imagen tarda */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden; /* Recorta la imagen dentro del círculo */
+    margin: 0 auto 15px auto;
+    border: 4px solid #96BF8F; /* Verde suave de tu paleta */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dcdcdc; /* Por si no hay foto cargada */
+}
+
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    /* Evita deformaciones y recorta perfectamente dentro del círculo */
+}
